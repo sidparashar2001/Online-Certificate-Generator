@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title -->
+    <title>ONLINE-CERTIFICATE-GENERATOR</title>
+    <!-- CSS file -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style2.css">
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="favIcon.png" type="image/x-icon">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goblin+One&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@600&display=swap" rel="stylesheet">
+
+    <!-- font-awesome cdn bootstrap for butons: -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    
+
+    <section id="header">
+        <div class="header container">
+          <div class="navbar" style="height: 65px;">
+            <div class="brand">
+              <a href="index2.html">
+                <h1><span>O</span>nline <span>C</span>ertificate <span>G</span>enerator</h1>
+              </a>
+            </div>
+            <div class="navlist ">
+              <div class="hamburger ">
+                <div class="bar"></div>
+              </div>
+              <ul style="height: 167px;
+              display: flex;
+              width: 102%;
+              justify-content: center;
+              align-items: center; list-style: none;">
+                <li><a href="index2.html" data-after="Home">Home</a></li>
+                <li><a href="/redirect.html" data-after="Sevices">Template</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="main-container">
+    <!-- Canvas :  -->
+    <canvas id="canva">
+    </canvas>
+    <!-- <img src="certificate.jpg" alt="certificate"> -->
+
+    <!-- input section -->
+    <section class="opti">
+            <label id="invalid" style="visibility:hidden;">INVALID:</label>
+            <input type="text" name="person_name" id="pname" placeholder="Enter Name Here" autocomplete="off">
+            <!-- <input type="date" name="date" id="dateValueapp"> -->
+            <button type="button" id="btn" onclick="validate();"><a href="#" id="download" download="Certificate">Generate Certificate</a></button>
+    </section>
+</div>
+    <!-- JS File -->
+    <script src="index.js"></script>
+    <script>
+        //Canvas:
+
+        const canvas=document.getElementById("canva");
+        // console.log(canvas)
+ 
+         // The getContext() function :returns the drawing context - which is an object that has 
+        // all the drawing properties and functions you use to draw on the canvas.
+        const contx=canvas.getContext('2d');
+
+        //create a new HTML image element and adding cert.jpg:
+        const image=new Image();
+        image.src="Appreciation.png";
+        // console.log(image)
+
+        //Execute a JavaScript immediately after an image has been loaded:
+        image.onload=function(){
+            canvas.width=image.width;
+            canvas.height=image.height;
+             drawImage();
+        }
+         //drawImage()is included in the context object.
+        function drawImage(){
+        //drawImage()function takes following parameters:image(object),x-distance,y-distance,width,height. 
+        contx.drawImage(image,0,0,image.width,image.height);
+
+        // dynamic text styling: 
+        // contx.font='60px Recursive, sans-serif';
+        contx.font='60px arial, cursive';
+        contx.fillStyle='black';
+
+        // fillText has 3 args: name,x,y.
+        contx.fillText(pname.value,1370,880);
+        contx.fillText(dateValue.value,170,180);
+
+        }
+
+        // Adding text:
+        // access the input object
+        const pname=document.getElementById("pname");
+        const dateValue=document.getElementById("dateValueapp");
+
+        // on 'input' event function will invoke.
+        pname.addEventListener('input',()=>{
+            drawImage();
+        })
+
+        // Download Functionality:
+        
+        const downloadButton=document.getElementById('download');
+        downloadButton.addEventListener('click',()=>{
+            // to make url of canvas and add it as reference for downloading.
+               downloadButton.href = canvas.toDataURL('image/jpeg',1.0);
+        })
+
+    </script>
+</body>
+</html>

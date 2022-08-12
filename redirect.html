@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #dedad3;
+}
+/* .heading3 {
+    margin: 0px 5px;
+} */
+a{
+    text-decoration: none;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+} 
+p{
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300px;
+    letter-spacing: .05rem;
+    color: black;
+}
+.section-title{
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  text-align: center;
+}
+.section-title span{
+  color: crimson;
+}
+.brand h1{
+    font-size: 1.95rem;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.2rem;
+}
+.brand h1 span{
+    color: #000000;
+    font-size: 3.75rem;
+    font-weight: bolder;
+}
+/* Header Section  */
+#header{
+        position: fixed;
+        
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: auto;
+    }   
+    #header .header{
+        min-height: 8vh;
+        
+        background-color: rgba(31, 30, 30, 0.24);
+    }
+    #header .navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width:100%;
+        height: 100%;
+        max-width: 99vw;
+        padding: 0 10px;
+    }
+    #header .navlist ul a{
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: .2rem;
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        padding: 20px;
+        display: block;
+    }
+    #header .navlist ul li:hover a{
+        color:#6e26c7;;    
+    }
+
+/* End of header section  */
+
+        #projects .projects{
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 0;
+        }
+        #projects .projects-header{
+            margin-bottom: 50px;
+        }
+        #projects .all-projects{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #projects .project-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        #projects .project-info{
+            padding: 30px;
+            flex-basis: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+            color: #fff;
+        }
+        #projects .project-info h1{
+            font-size: 4rem;
+            
+        }
+        #projects .project-info h2{
+            font-size: 1.8rem;
+      
+            margin-top: 10px;
+        }
+        #projects .project-info p{
+          color: #fff;
+    font-weight: 200;
+        }
+        #projects .project-img{
+            flex-basis: 50%;
+            height: 300px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        #projects .project-img:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+          
+            height: 100%;
+            width: 100%;
+            z-index: 200;
+            /* background-image: linear-gradient(60deg, #29323c 0%, #485563 100%); */
+            /* opacity: 0.1; */
+        }
+        .redirect-color{
+          font-size: 3.4rem;
+          text-transform: uppercase;
+        }
+        .redirect-color span{
+          
+          color: #6e26c7;
+        }
+        /* for the smoothness of the transformm transition  -> Step 2*/
+        #projects .project-img img{
+            transition: .3s ease transform;
+        }
+        /* To create a little hover effect for the items -> Step 1 */
+        #projects .project-item:hover .project-img img{
+            transform: scale(1.1);
+        }
+        /* End of Projects section  */</style>
+</head>
+<body>
+  <!-- Header Section  -->
+  <section id="header">
+    <div class="header container">
+      <div class="navbar" style="height: 65px;">
+        <div class="brand">
+          <a href="index2.html">
+            <h1><span>O</span>nline <span>C</span>ertificate <span>G</span>enerator</h1>
+          </a>
+        </div>
+        <div class="navlist ">
+          <div class="hamburger ">
+            <div class="bar"></div>
+          </div>
+          <ul style="height: 167px;
+          display: flex;
+          width: 102%;
+          justify-content: center;
+          align-items: center; list-style: none;">
+            <li><a href="index2.html" data-after="Home">Home</a></li>
+            <li><a href="/redirect.html" data-after="Sevices">Template</a></li>
+            <li><a href="contact.html" data-after="Contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End of Header Section  -->
+
+    <!-- Projects Section  -->
+<section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="redirect-color">Recent <span>Projects</span></h1>
+      </div>
+      <div class="all-projects">
+        <a href="execellence.html">
+        <div class="project-item"><!--1st part ->info 2nd part -> image-->
+          <div class="project-info">
+            <h1>Certificate of Excellence</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sit rerum officia, pariatur officiis quae eligendi necessitatibus culpa nesciunt illum doloribus libero eveniet corporis, expedita ut quod quo reiciendis veniam.</p>
+          </div>
+          <div class="project-img">
+            <img src="Excellence.png" alt="img">
+          </div>
+        </div>
+      </a>
+      <a href="participation.html">
+        <div class="project-item"><!--1st part ->info 2nd part -> image-->
+          <div class="project-info">
+            <h1>Certificate of Participation</h1>
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sit rerum officia, pariatur officiis quae eligendi necessitatibus culpa nesciunt illum doloribus libero eveniet corporis, expedita ut quod quo reiciendis veniam.</p>
+          </div>
+          <div class="project-img">
+            <img src="Participation.png" alt="img">
+          </div>
+        </div>
+      </a>
+      <a href="openmic.html">
+        <div class="project-item"><!--1st part ->info 2nd part -> image-->
+          <div class="project-info">
+            <h1>Open Mic Award</h1>
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sit rerum officia, pariatur officiis quae eligendi necessitatibus culpa nesciunt illum doloribus libero eveniet corporis, expedita ut quod quo reiciendis veniam.</p>
+          </div>
+          <div class="project-img">
+            <img src="open-mic.png" alt="img">
+          </div>
+        </div>
+      </a>
+      <a href="appreciation.html">
+        <div class="project-item"><!--1st part ->info 2nd part -> image-->
+          <div class="project-info">
+            <h1>Certificate of Appreciation</h1>
+        
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sit rerum officia, pariatur officiis quae eligendi necessitatibus culpa nesciunt illum doloribus libero eveniet corporis, expedita ut quod quo reiciendis veniam.</p>
+          </div>
+          <div class="project-img">
+            <img src="Appreciation.png" alt="img">
+          </div>
+        </div>
+      </a>
+      <a href="achievement.html">
+        <div class="project-item"><!--1st part ->info 2nd part -> image-->
+          <div class="project-info">
+            <h1>Certificate of Achievement</h1>
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit sit rerum officia, pariatur officiis quae eligendi necessitatibus culpa nesciunt illum doloribus libero eveniet corporis, expedita ut quod quo reiciendis veniam.</p>
+          </div>
+          <div class="project-img">
+            <img src="Achievement.png" alt="img">
+          </div>
+        </div>
+      </a>
+      </div>
+    </div>
+  </section>
+  <!-- End of Projects Section  -->
+</body>
+</html>
